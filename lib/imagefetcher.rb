@@ -4,10 +4,8 @@ require 'imagefetcher/client'
 
 module Imagefetcher
   class Fetcher
-
     def get_images(url)
       Parser.new.parse_page(url)
     end
-
   end
 end

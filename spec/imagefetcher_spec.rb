@@ -1,4 +1,4 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe Imagefetcher do
   let(:valid_url) { 'https://moikrug.ru/vacancies/1000031431' }

@@ -1,9 +1,7 @@
 require 'spec_helper'
 
 describe Imagefetcher do
-
   context 'with valid url' do
-
     let(:valid_url) { 'https://moikrug.ru/vacancies/1000031431' }
 
     it 'returns page' do
@@ -18,12 +16,11 @@ describe Imagefetcher do
     let(:invalid_url) { 'http://invalid.kek' }
 
     it 'returns exception' do
-      expect {
+      expect do
         VCR.use_cassette('invalid_page') do
           Imagefetcher::Client.get_page(invalid_url)
         end
-      }.to raise_error SocketError
+      end.to raise_error SocketError
     end
   end
-
 end

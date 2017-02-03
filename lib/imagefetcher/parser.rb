@@ -2,7 +2,6 @@ require 'nokogiri'
 
 module Imagefetcher
   class Parser
-
     def parse_page(url)
       page = Imagefetcher::Client.get_page(url)
       fetch_images_url(page)
@@ -14,6 +13,5 @@ module Imagefetcher
       document = Nokogiri::HTML(page)
       document.xpath('//img').map { |img| img['src'] }
     end
-
   end
 end
